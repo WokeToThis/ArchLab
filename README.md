@@ -2,6 +2,9 @@
 
 ### Ερώτημα 1:
 
+Παράδειγμα Hello world!
+Βασικά χαρακτηριστικά που βρήκαμε στο starter_se.py:
+Voltage="3.3V"
 Τύπος CPU: 'minor',1 core  
 συχνότητα λειτουργίας : '1GHz'  
 βασικές μονάδες:   
@@ -11,6 +14,7 @@ caches:L1,L2
 
 ### Ερώτημα 2:  
 a)
+Επαλήθευση από τα αρχεία config.ini και config.json:
 >[system.voltage_domain]  
 >type=VoltageDomain  
 >eventq_index=0  
@@ -21,41 +25,56 @@ a)
  >[stats.txt]  
  >sim_freq                                 1000000000000                       # Frequency of simulated ticks  
  
- b) 
- 
- >sim_seconds                                  0.000035                       # Number of seconds simulated  
- >sim_insts                                        5027                       # Number of instructions simulated  
- >host_inst_rate                                  26663                       # Simulator instruction rate (inst/s)  
-
- 
-c)
-
->system.cpu_cluster.cpus.committedInsts           5027                       # Number of instructions committed  
->system.cpu_cluster.cpus.committedOps             5831                       # Number of ops (including micro ops) committed  
->##Micro-ops are basically a way to turn CISC-instructions into RISC-instruction  
-
-d)
-
->system.cpu_cluster.l2.tags.data_accesses         7804                       # Number of data accesses  
-
 >[system.cpu_cluster.l2]  
 >size=1048576  
 >assoc=16  
 >prefetch_on_access=false  
 >write_buffers=8  
 >data_latency=12  
+ 
+ b) 
+ 
+ >sim_seconds                                  0.000035                       # Number of seconds simulated  
+ Τα sim_seconds είναι ο χρόνος που προσομοιώθηκε σε δευτερόλεπτα.  
+ >sim_insts                                        5027                       # Number of instructions simulated  
+ Τα sim_insts είναι οι εντολές που προσομοιώθηκαν.  
+ >host_inst_rate                                  26663                       # Simulator instruction rate (inst/s)  
+ Το host_inst_rate είναι οι εντολές που εκτελεί ο gem5 στον host ανά δευτερόλεπτο.
+ 
+c)
+Ενώ τα commited instructions είναι 5027(όσα και τα sim_insts), τα συνολικό νούμερο των commited εντολών είναι 5831 γιατί περιλαμβάνει και κάποια "micro ops" τα οποία χρησιμοποιούνται για να γίνουν κάποιες εντολές από CISC -> RISC.   
+>system.cpu_cluster.cpus.committedInsts           5027                       # Number of instructions committed  
+>system.cpu_cluster.cpus.committedOps             5831                       # Number of ops (including micro ops) committed  
+>##Micro-ops are basically a way to turn CISC-instructions into RISC-instruction  
+
+d)
+Η L2 cache προσπελάστηκε 7804 φορές σύμφωνα με το stats.txt αρχείο.
+>system.cpu_cluster.l2.tags.data_accesses         7804                       # Number of data accesses  
+
+
 
 ### Ερώτημα 3:
 
 Τα βασικά  μοντέλα in-order CPUs είναι τα SimpleCPU και MinorCPU.
 
-SimpleCPU (χωρίζονται σε):
+**SimpleCPU** (χωρίζονται σε):
 
 * BaseSimpleCPU
 * AtomicSimpleCPU
 * TimingSimpleCPU
 
-**BaseSimpleCPU**
-Έχει κάποιες βασικές συναρτήσεις που κληρονομεί στους υπόλοιπους τύπους SimpleCPU.  Δεν τρέχει μόνο του.
+**BaseSimpleCPU**  
+Έχει κάποιες βασικές συναρτήσεις που κληρονομεί στους υπόλοιπους τύπους SimpleCPU. Δεν τρέχει μόνο του.
 
+**AtomicSimpleCPU**  
+Χρησιμοποιεί atomic προσπελάσεις της μνήμης(γρηγορότερες απο αυτές της timing), σχεδόν άμεσες. Χρησιμοποιεί εκτιμήσεις του latency από αυτές τις προσπελάσιες για να υπολογίσει το συνολικό χρόνο προσπέλασης της cache. Κληρονομεί συναρτήσεις της BaseSimpleCPU.
 
+**TimingSimpleCPU**  
+Χρησιμοποιεί προσπελάσεις της μνήμης, πιο ρεαλιστικές, οι οποίες παίρνουν χρόνο να φτάσουν στον επεξεργαστή καθυστερώντας τα υπόλοιπα memory requests.  
+
+Οι SimpleCPUs δεν χρησιμοποιούν pipeline.  
+
+**MinorCPU**
+Χρησιμοποιεί pipeline 4 σταδίων, τα οποία είναι Fetch1, Fetch2, Decode και Execute. Τα στάδια συνδέονται με FIFO buffers ώστε να μοντελοποιούνται οι καθυστερήσεις από stage σε stage. Είναι πιο ρεαλιστική από την TimingSimpleCPU και χρησιμοποιείται αυστηρά για να προσομοιώσει μοντέλα in-order CPU.
+
+a.  
