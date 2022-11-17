@@ -33,13 +33,15 @@ a)
 >data_latency=12  
  
  b) 
- 
- >sim_seconds                                  0.000035                       # Number of seconds simulated  
  Τα sim_seconds είναι ο χρόνος που προσομοιώθηκε σε δευτερόλεπτα.  
- >sim_insts                                        5027                       # Number of instructions simulated  
+ >sim_seconds                                  0.000035                       # Number of seconds simulated  
+ 
  Τα sim_insts είναι οι εντολές που προσομοιώθηκαν.  
+ >sim_insts                                        5027                       # Number of instructions simulated  
+
+ Το host_inst_rate είναι οι εντολές που εκτελεί ο gem5 στον host ανά δευτερόλεπτο.  
  >host_inst_rate                                  26663                       # Simulator instruction rate (inst/s)  
- Το host_inst_rate είναι οι εντολές που εκτελεί ο gem5 στον host ανά δευτερόλεπτο.
+
  
 c)
 Ενώ τα commited instructions είναι 5027(όσα και τα sim_insts), τα συνολικό νούμερο των commited εντολών είναι 5831 γιατί περιλαμβάνει και κάποια "micro ops" τα οποία χρησιμοποιούνται για να γίνουν κάποιες εντολές από CISC -> RISC.   
