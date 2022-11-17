@@ -1,6 +1,6 @@
 ## ArchLab
 
-Ερώτημα 1:
+###Ερώτημα 1:
 
 Τύπος CPU: 'minor',1 core  
 συχνότητα λειτουργίας : '1GHz'  
@@ -9,7 +9,7 @@ caches:L1,L2
 μνήμη 'DDR3_1600_8x8',2GB,2 memory channels  
 
 
-Ερώτημα 2:  
+###Ερώτημα 2:  
 a)
 >[system.voltage_domain]  
 >type=VoltageDomain  
@@ -18,14 +18,16 @@ a)
  
  >[system.cpu_cluster.cpus]
  >type=MinorCPU
- >[stats.txt] 
+ >[stats.txt]  
  >sim_freq                                 1000000000000                       # Frequency of simulated ticks  
+ 
+ b) 
+ 
  >sim_seconds                                  0.000035                       # Number of seconds simulated  
  >sim_insts                                        5027                       # Number of instructions simulated  
  >host_inst_rate                                  26663                       # Simulator instruction rate (inst/s)  
 
-b)  
-
+ 
 c)
 
 >system.cpu_cluster.cpus.committedInsts           5027                       # Number of instructions committed  
@@ -42,3 +44,8 @@ d)
 >prefetch_on_access=false  
 >write_buffers=8  
 >data_latency=12  
+
+###Ερώτημα 3:
+
+
+
