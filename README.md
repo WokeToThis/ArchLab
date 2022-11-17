@@ -7,3 +7,12 @@
 βασικές μονάδες:   
 caches:L1,L2  
 μνήμη 'DDR3_1600_8x8',2GB,2 memory channels  
+
+
+Ερώτημα 2:  
+a)
+ >[system.cpu_cluster.cpus]
+ >type=MinorCPU
+b)
+c)
+d)
