@@ -47,6 +47,15 @@ d)
 
 ### Ερώτημα 3:
 
+Τα βασικά  μοντέλα in-order CPUs είναι τα SimpleCPU και MinorCPU.
 
+SimpleCPU (χωρίζονται σε):
+
+* BaseSimpleCPU
+* AtomicSimpleCPU
+* TimingSimpleCPU
+
+**BaseSimpleCPU**
+Έχει κάποιες βασικές συναρτήσεις που κληρονομεί στους υπόλοιπους τύπους SimpleCPU.  Δεν τρέχει μόνο του.
 
 
