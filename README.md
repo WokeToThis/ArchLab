@@ -15,7 +15,7 @@ caches:L1,L2
 
 ### Ερώτημα 2:  
 a)
-Επαλήθευση από τα αρχεία config.ini και config.json(Πρέπει να ανέβουν στον Folder1):
+Επαλήθευση από τα αρχεία config.ini και config.json(_Τα αρχεία βρίσκονται στον Folder1_):
 >[system.voltage_domain]  
 >type=VoltageDomain  
 >eventq_index=0  
