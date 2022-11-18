@@ -3,13 +3,14 @@
 ### Ερώτημα 1:
 
 Παράδειγμα Hello world!  
-Βασικά χαρακτηριστικά που βρήκαμε στο starter_se.py:  
+Βασικά χαρακτηριστικά που βρήκαμε στο starter_se.py(_Το αρχείο starter_se.py βρίσκεται στον Folder1_):  
 Voltage="3.3V"  
 Τύπος CPU: 'minor',1 core  
 συχνότητα λειτουργίας : '1GHz'  
 βασικές μονάδες:   
 caches:L1,L2  
 μνήμη 'DDR3_1600_8x8',2GB,2 memory channels  
+
 
 
 ### Ερώτημα 2:  
