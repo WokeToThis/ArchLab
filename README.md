@@ -108,12 +108,14 @@ c.
 >host_seconds                                     0.48                       # Real time elapsed on the host  
 >sim_seconds                                  0.000088                       # Number of seconds simulated  
 >sim_ticks                                    88223022                       # Number of ticks simulated  
+
 Αυξάνοντας τη συχνότητα μειώνεται ο χρόνος της προσομοίωσης(εκτελείται πιο γρήγορα), από 0.000126 σε 0.000088 s.
 
 * Για TimingSimpleCPU(_από το αρχείο stats.txt στον Ερ3,c/TimingSimple_):  
 >host_seconds                                     0.16                       # Real time elapsed on the host  
 >sim_seconds                                  0.000221                       # Number of seconds simulated  
 >sim_ticks                                   220597515                       # Number of ticks simulated  
+
 Αυξάνοντας τη συχνότητα μειώνεται ο χρόνος της προσομοίωσης(εκτελείται πιο γρήγορα), από 0.000326 σε 0.000221 s.
 
 **Μετά αλλάξαμε την μνήμη σε DDR4_2400_8x8**
