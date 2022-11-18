@@ -102,8 +102,29 @@ b.
 
 
 c.  
-Αλλάξτε μια παράμετρο του επεξεργαστή και παρατηρήστε τα αποτελέσματα για τα δύο  
-διαφορετικά CPU models. Δοκιμάστε να αλλάξετε την συχνότητα λειτουργίας και τη  
-τεχνολογία της μνήμης που χρησιμοποιείτε. Παραθέστε και δικαιολογήσετε τα  
-αποτελέσματα που παρατηρήσατε.  
+ 
+**Πρώτα αλλάξαμε την συχνότητα σε 3GHz**  
+* Για MinorCPU(_από το αρχείο stats.txt στον Ερ3,c/Minor_):  
+>host_seconds                                     0.48                       # Real time elapsed on the host  
+>sim_seconds                                  0.000088                       # Number of seconds simulated  
+>sim_ticks                                    88223022                       # Number of ticks simulated  
+Αυξάνοντας τη συχνότητα μειώνεται ο χρόνος της προσομοίωσης(εκτελείται πιο γρήγορα), από 0.000126 σε 0.000088 s.
 
+* Για TimingSimpleCPU(_από το αρχείο stats.txt στον Ερ3,c/TimingSimple_):  
+>host_seconds                                     0.16                       # Real time elapsed on the host  
+>sim_seconds                                  0.000221                       # Number of seconds simulated  
+>sim_ticks                                   220597515                       # Number of ticks simulated  
+Αυξάνοντας τη συχνότητα μειώνεται ο χρόνος της προσομοίωσης(εκτελείται πιο γρήγορα), από 0.000326 σε 0.000221 s.
+
+**Μετά αλλάξαμε την μνήμη σε DDR4_2400_8x8**
+*  Για MinorCPU(_από το αρχείο stats.txt στον Ερ3,c/Memory/Minor_):  
+>host_seconds                                     0.48                       # Real time elapsed on the host  
+>sim_seconds                                  0.000126                       # Number of seconds simulated  
+>sim_ticks                                   125847000                       # Number of ticks simulated  
+
+*  Για TimingSimpleCPU(_από το αρχείο stats.txt στον Ερ3,c/Memory/TimingSimple_):  
+>host_seconds                                     0.16                       # Real time elapsed on the host  
+>sim_seconds                                  0.000326                       # Number of seconds simulated  
+>sim_ticks                                   325607000                       # Number of ticks simulated  
+
+Τα sim_seconds είναι ίδια με τα αρχικά και στις δυο περιπτώσεις αφού το cpu_clock επανήρθε στo 1GHz. Υπάρχει μία μικρή μείωση στα sim_ticks.
