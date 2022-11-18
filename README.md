@@ -83,15 +83,16 @@ d)
 a.  
 Το πρόγραμμα σε C που χρησιμοποιήσαμε είναι το _myprog.c_ και το εκτελέσαμε με τα μοντέλα TimingSimpleCPU και MinorCPU.  
 Τα αποτελέσματα όσον αφορά τους χρόνους εκτέλεσης παραθέτονται παρακάτω:  
-* Για το μοντέλο TimingSimpleCPU(_από το αρχείο stats.txt στον Folder2_):  
->stuff
->more stuff
->bla bla
 
-* Για το μοντέλο MinorCPU(_από το αρχείο stats.txt στον Folder3_):  
->bla bla
->bla
->blablabla
+* Για το μοντέλο MinorCPU(_από το αρχείο stats.txt στον Folder2(minorcpu)_):  
+>host_seconds                                     0.54                       # Real time elapsed on the host  
+>sim_seconds                                  0.000126                       # Number of seconds simulated  
+>sim_ticks                                   126343000                       # Number of ticks simulated  
+
+* Για το μοντέλο TimingSimpleCPU(_από το αρχείο stats.txt στον Folder3(timingsimplecpu)_):  
+>host_seconds                                     0.16                       # Real time elapsed on the host  
+>sim_seconds                                  0.000326                       # Number of seconds simulated  
+>sim_ticks                                   325873000                       # Number of ticks simulated  
 
 b.  
 Αν τα αποτελέσματα που παρατηρείτε διαφέρουν, με βάση όσα περιγράψατε για τα  
