@@ -130,7 +130,7 @@ c.
 >sim_seconds                                  0.000326                       # Number of seconds simulated  
 >sim_ticks                                   325607000                       # Number of ticks simulated  
 
-Τα sim_seconds είναι ίδια με τα αρχικά και στις δυο περιπτώσεις αφού το cpu_clock επανήρθε στo 1GHz. Υπάρχει μία μικρή μείωση στα sim_ticks.
+Τα sim_seconds είναι ίδια με τα αρχικά και στις δυο περιπτώσεις αφού το cpu_clock επανήρθε στo 1GHz. Υπάρχει μία μικρή μείωση στα sim_ticks. Η μνήμη χρησιμοποιείται σχεδόν καθόλου σε σχέση με την cache, οπότε δεν υπάρχει μεγάλη διαφορά στους χρόνους.
 
 Συνοπτικά σε ένα διάγραμμα:
 ![image](https://user-images.githubusercontent.com/70851911/215795069-b3486101-b47f-4e01-b43e-b09d768e1c11.png)
