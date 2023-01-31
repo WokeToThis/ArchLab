@@ -52,6 +52,7 @@ c)
 d)
 Η L2 cache προσπελάστηκε 7804 φορές σύμφωνα με το stats.txt αρχείο.
 >system.cpu_cluster.l2.tags.data_accesses         7804                       # Number of data accesses  
+Αν δεν είχαμε αυτή την πληροφορία, θα μπορούσαμε να την εκμαιεύσουμε από τα L1 misses.
 
 
 
@@ -92,6 +93,9 @@ a.
 >host_seconds                                     0.16                       # Real time elapsed on the host  
 >sim_seconds                                  0.000326                       # Number of seconds simulated  
 >sim_ticks                                   325873000                       # Number of ticks simulated  
+
+
+
 
 b.  
 
